@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>
+        Form Validation
+    </title>
+  </style>
+<script>
+    function validation(){
+
+        var name=document.forms["form1"]["name"].value;
+        var ph=document.forms["form1"]["phno"].value;
+        var mail=document.myform.email.value;
+        var password=document.myform.password.value;
+        var atposition=mail.indexOf("@");
+        var dotposition=mail.lastIndexOf(".");
+
+
+        if (name==null || name==""){
+          alert("Name can't be blank");
+          return false;
+        }else if(password.length<6){
+          alert("Password must be at least 6 characters long.");
+          return false;
+        }else if(isNaN(ph) || ph.length()>10){
+            alert("Phone Number is not valid");
+            return false;
+        }else if (atposition<1 || dotposition<atposition+2 ||dotposition+2>=x.length()){
+
+            alert("Please enter a valid e-mail address \natpostion:"+atposition+"\n dotposition:"+dotposition);
+
+            return false;
+
+          
+        }
+</script>
+</head>
+<body>
+    <div class="container">
+        <center><h1><b>FORM VALIDATION</b></h1></center>
+         <form name="form1" onsubmit="return validation()" method="post">
+        <div class="form-group">
+            <label for=" name">Name:</label>
+            <input type="text" class="form-control input-sm"  placeholder="Enter Name" name="name">
+        </div>
+        <div class="form-group">
+            <label for=" phno">Phone Number:</label>
+            <input type="text" class="form-control input-sm"  placeholder="Enter Phone Number" name="phno">
+        </div>
+        <div class="form-group">
+            <label for=" email">Email ID:</label>
+            <input type="text" class="form-control input-sm"  placeholder="Enter Email" name="email">
+        </div>
+        <div class="form-group">
+            <label for=" password">Password:</label>
+            <input type="text" class="form-control input-sm"  placeholder="Enter Password" name="phno">
+        </div>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+        </form>
+    </div>
+</body>
+</html>
